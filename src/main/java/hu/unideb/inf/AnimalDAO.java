@@ -9,4 +9,5 @@ public interface AnimalDAO {
     public List<Animal> getAnimals();
     public void updateAnimal(Animal a);
     public void deleteAnimal(Animal a);
+    public void saveZoo(Zoo zoo);
 }

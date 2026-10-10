@@ -1,9 +1,6 @@
 package hu.unideb.inf;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +10,17 @@ public class Zoo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "zoo_id")
     private List<Animal> animals = new ArrayList<>();
 
     public Zoo(String name) {
         this.name = name;
+    }
+
+    public Zoo() {
+
     }
 
     public long getId() {

@@ -14,6 +14,10 @@ public class AnimalTools {
         a.setName("elephant");
         a.setGender(Animal.GenderType.FEMALE);
 
-        dao.saveAnimal(a);
+        Zoo zoo = new Zoo();
+        zoo.setName("Debrecen Zoo");
+        zoo.getAnimals().add(a);
+
+        dao.saveZoo(zoo);
     }
 }
