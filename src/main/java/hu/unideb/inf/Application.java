@@ -10,15 +10,8 @@ public class Application {
 
     public static void main(String[] args) throws SQLException {
         startDatabase();
-
-        AnimalDAO dao = new JPAAnimalDAO();
-
-        Animal a = new Animal();
-        a.setAge(20);
-        a.setName("elephant");
-        a.setGender(Animal.GenderType.FEMALE);
-
-        dao.saveAnimal(a);
+        AnimalTools animalTools = new AnimalTools(new JPAAnimalDAO());
+        animalTools.manageAnimals();
     }
 
     private static void startDatabase() throws SQLException {
